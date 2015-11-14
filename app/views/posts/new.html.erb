@@ -1,0 +1,36 @@
+<h1>WordPress Clone</h1>
+
+<h2>Create new post</h2>
+
+
+<%= form_for(@post) do |f| %>
+  <div>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div>
+    <%= f.label :content %>
+    <%= f.text_area :content %>
+  </div>
+
+  <div>
+    <%= f.label :publish_date %>
+    <%= f.date_field :publish_date %>
+  </div>
+
+  <div>
+    <%= f.label :author %>
+    <%= f.text_field :author %>
+  </div>
+
+  <div>
+    <%= f.label :category %>
+    <%= f.text_field :category %>
+  </div>
+
+  <button type="submit">
+    Create post
+  </button>
+<% end %>
+
