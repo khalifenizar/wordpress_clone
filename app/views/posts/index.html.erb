@@ -1,0 +1,16 @@
+<h1>WordPress Clone</h1>
+
+<h2>Posts this month</h2>
+
+<ul>
+  <% @posts.each do |post| %>
+    <li>
+      <h3>
+        <a href="/posts/<%= post.id %>">
+          <%= post.title %>
+        </a>
+      </h3>
+      <small>By: <%= post.author %> </small>
+    </li>
+  <% end %>
+</ul>

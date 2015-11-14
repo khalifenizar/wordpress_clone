@@ -27,6 +27,14 @@ class PostsController < ApplicationController
     end
   end
 
+  def index
+    now = DateTime.now
+    filtered = Post.where(publish_date: now.beginning_of_month..now.end_of_month)
+    @posts = filtered.order(publish_date: "desc")
+
+    render("index")
+  end
+
 
   private
 
