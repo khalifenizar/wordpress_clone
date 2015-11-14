@@ -1,0 +1,24 @@
+<h1>WordPress Clone</h1>
+
+<h2>
+  Post:
+  <%= @post.title %>
+</h2>
+
+<small>
+  By:
+  <%= @post.author %>
+</small>
+
+<p>
+  Published on:
+  <time> <%= @post.publish_date %> </time>
+</p>
+
+<p> <%= @post.content %> </p>
+
+
+<footer>
+  Category:
+  <%= @post.category %>
+</footer>

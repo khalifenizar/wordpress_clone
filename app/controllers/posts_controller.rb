@@ -16,6 +16,17 @@ class PostsController < ApplicationController
     end
   end
 
+  def show
+    post_id = params[:id]
+    @post = Post.find_by(id: post_id)
+
+    if @post == nil
+      redirect_to("/404")
+    else
+      render("show")
+    end
+  end
+
 
   private
 
