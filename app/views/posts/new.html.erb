@@ -3,6 +3,17 @@
 <h2>Create new post</h2>
 
 
+<% if @post.errors.any? %>
+  <ul class="errors">
+    <% @post.errors.full_messages.each do |err| %>
+      <li>
+        <%= err %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+
 <%= form_for(@post) do |f| %>
   <div>
     <%= f.label :title %>
@@ -33,4 +44,3 @@
     Create post
   </button>
 <% end %>
-
