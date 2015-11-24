@@ -2,6 +2,12 @@
 
 <h2>Posts this month</h2>
 
+<% if user_signed_in? %>
+  <header>
+    Hello, <%= current_user.name %>!
+  </header>
+<% end %>
+
 <ul>
   <% @posts.each do |post| %>
     <li>
