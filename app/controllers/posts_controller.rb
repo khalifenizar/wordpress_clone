@@ -29,8 +29,14 @@ class PostsController < ApplicationController
   end
 
   def index
-    now = DateTime.now
-    filtered = Post.where(publish_date: now.beginning_of_month..now.end_of_month)
+    if params[:category_id]
+      cat = Category.find_by(id: params[:category_id])
+      filtered = cat.posts
+    else
+      now = DateTime.now
+      filtered = Post.where(publish_date: now.beginning_of_month..now.end_of_month)
+    end
+
     @posts = filtered.order(publish_date: "desc")
 
     render("index")

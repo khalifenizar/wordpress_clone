@@ -2,6 +2,10 @@
 
 <ul>
   <% @categories.each do |cat| %>
-    <li> <%= cat.name %> </li>
+    <li>
+      <a href="/categories/<%= cat.id %>/posts">
+        <%= cat.name %>
+      </a>
+    </li>
   <% end %>
 </ul>
